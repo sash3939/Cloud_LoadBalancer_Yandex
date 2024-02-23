@@ -71,6 +71,13 @@
 
 [Terraform_playbook](https://github.com/sash3939/Cloud_LoadBalancer_Yandex/assets/156709540/f5db1bab-ad26-408c-ba17-e1527c7129fa)
 
+*2. Скриншот статуса балансировщика и целевой группы.*
+
+[Lb](https://github.com/sash3939/Cloud_LoadBalancer_Yandex/assets/156709540/8f2d495b-4ad8-4818-9dd5-6a0f42868dd4)
+[status](https://github.com/sash3939/Cloud_LoadBalancer_Yandex/assets/156709540/3822bb90-5f15-4a07-a7f3-b0878402f018)
+
+*3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
+[page](https://github.com/sash3939/Cloud_LoadBalancer_Yandex/assets/156709540/480108a4-0f65-465a-8894-c73cefa70749)
 
 ## Задания со звёздочкой*
 Эти задания дополнительные. Выполнять их не обязательно. На зачёт это не повлияет. Вы можете их выполнить, если хотите глубже разобраться в материале.
