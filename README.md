@@ -66,6 +66,62 @@
 
 ---
 
+## Решение 1
+*1. Terraform Playbook.*
+
+data "template_file" "users" {
+  template = file("./cloud-conf.yaml")
+}
+
+resource "yandex_compute_instance" "vm" {
+
+  allow_stopping_for_update = true
+  count                     = 2
+  name                      = "lab-vm-${count.index}"
+  zone                      = "ru-central1-a"
+  platform_id               = "standard-v1"
+  boot_disk {
+    initialize_params {
+      image_id = "fd8svvs3unvqn83thrdk"
+      size     = 10
+    }
+  }
+  scheduling_policy {
+    preemptible = true
+  }
+
+  resources {
+    core_fraction = 5
+    cores         = 2
+    memory        = 2
+  }
+
+
+  network_interface {
+
+    subnet_id = yandex_vpc_subnet.subnet-1.id
+
+    nat       = true
+
+  }
+
+
+
+  metadata = {
+
+    user-data = file("./cloud-conf.yaml")
+
+    #    ssh-keys = "terraform:${file("~/.ssh/id_ed25519.pub")}"
+
+
+
+  }
+
+}
+
+
+
+
 ## Задания со звёздочкой*
 Эти задания дополнительные. Выполнять их не обязательно. На зачёт это не повлияет. Вы можете их выполнить, если хотите глубже разобраться в материале.
 
